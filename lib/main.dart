@@ -22,11 +22,11 @@ class _MainAppState extends State<MainApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test App 1'),
+          title: const Text('Test App 1'),
           centerTitle: true,
           actions: [
             IconButton(
-              icon: Icon(Icons.refresh),
+              icon: const Icon(Icons.refresh),
               onPressed: () {
                 setState(() {
                   counter++;
@@ -35,10 +35,29 @@ class _MainAppState extends State<MainApp> {
             ),
           ],
         ),
+        bottomNavigationBar: NavigationBar(
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+        ),
         body: Center(
-          child: Text(
-            'Hello World! $counter',
-            style: TextStyle(fontSize: 24),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 300,
+                height: 300,
+                color: Colors.blueAccent,
+              ),
+              Text('Refresh Counter: $counter', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),)
+            ],
           ),
         ),
       ),
