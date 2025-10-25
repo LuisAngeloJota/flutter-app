@@ -35,28 +35,15 @@ class _MainAppState extends State<MainApp> {
             ),
           ],
         ),
-        bottomNavigationBar: NavigationBar(
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-        ),
         body: Center(
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Container(
-                width: 300,
-                height: 300,
-                color: Colors.blueAccent,
+              Container(width: 300, height: 300, color: Colors.blueAccent),
+              Text(
+                'Refresh Counter: $counter',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              Text('Refresh Counter: $counter', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),)
             ],
           ),
         ),
